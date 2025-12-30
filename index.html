@@ -4,23 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tegna – Tegninger til byggesøknad (100 kr/m²)</title>
+
   <meta name="description" content="Skreddersydde tegninger til din byggesøknad – klare til innsending. Plantegninger, fasader, snitt, situasjonsplan og 3D‑illustrasjoner. Pris: 100 kr/m². Leveringstid ca. 2 uker.">
   <meta name="robots" content="index,follow" />
+
   <meta property="og:title" content="Tegna – Tegninger til byggesøknad" />
   <meta property="og:description" content="Plantegninger, fasader, snitt, situasjonsplan og 3D. Pris 100 kr/m². Rask levering og ryddig prosess." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/tegna-logo.png" />
+  <meta property="og:image" content="assets/logo.jpg" />
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tegna","url":"https://www.tegna.no","logo":"https://www.tegna.no/assets/tegna-logo.png","sameAs":[]}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tegna",
+    "url": "https://www.tegna.no",
+    "logo": "https://www.tegna.no/assets/logo.jpg",
+    "sameAs": []
+  }
+  </script>
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="container header-wrap">
-    <a href="#" class="brand" aria-label="tegna-logo">
+    <a href="#" class="brand" aria-label="Tegna logo">
       <img src="assets/logo.jpg" alt="TEGNA – tegninger til byggesøknad" height="40">
-      <svg class="logo-fallback" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28 L32 12 L56 28"/><rect x="14" y="28" width="36" height="24" rx="1"/><rect x="28" y="34" width="8" height="8"/></g></svg>
     </a>
+
     <nav class="nav" aria-label="Hovedmeny">
       <a href="#tjenester">Tjenester</a>
       <a href="#pris">Pris</a>
@@ -32,6 +47,7 @@
 </header>
 
 <main>
+
   <section class="hero">
     <div class="container">
       <h1>Trenger du tegninger til byggesøknaden?<br class="br-md"> Vi gjør det enkelt.</h1>
@@ -64,8 +80,12 @@
           <li>3D‑illustrasjoner (tillegg)</li>
         </ul>
         <p class="muted">Leveringstid: Normalt ca. to uker, avhengig av avklaringer underveis.</p>
-        <div class="stack"><a href="#kontakt" class="btn btn-primary">Start bestilling</a><a href="#prosjekter" class="link">Se prosjekter</a></div>
+        <div class="stack">
+          <a href="#kontakt" class="btn btn-primary">Start bestilling</a>
+          <a href="#prosjekter" class="link">Se prosjekter</a>
+        </div>
       </div>
+
       <figure class="service-figure">
         <img src="assets/tegna-info.jpg" alt="Skreddersydde tegninger: plantegning, fasade, snitt, situasjonsplan og 3D‑illustrasjon">
         <figcaption class="sr-only">Oversikt over tegningstyper som leveres av Tegna</figcaption>
@@ -80,14 +100,34 @@
         <div class="price-card">
           <h3>Tegninger til byggesøknad</h3>
           <p class="price"><span class="big">100</span> kr/m²</p>
-          <ul class="bullets"><li>Plantegninger, fasader, snitt, situasjonsplan</li><li>Leveres klare til innsending</li><li>Kommunale krav ivaretas</li></ul>
+          <ul class="bullets">
+            <li>Plantegninger, fasader, snitt, situasjonsplan</li>
+            <li>Leveres klare til innsending</li>
+            <li>Kommunale krav ivaretas</li>
+          </ul>
         </div>
+
         <form id="calc-form" class="calc" aria-labelledby="calc-title">
           <h3 id="calc-title">Pris-kalkulator</h3>
-          <label>Bruksareal (m²)<input type="number" id="area" name="area" inputmode="numeric" min="1" placeholder="f.eks. 120" required></label>
-          <label class="check"><input type="checkbox" id="want3d"> Legg til 3D‑illustrasjoner</label>
+
+          <label>Bruksareal (m²)
+            <input type="number" id="area" name="area" inputmode="numeric" min="1" placeholder="f.eks. 120" required>
+          </label>
+
+          <label class="check">
+            <input type="checkbox" id="want3d"> Legg til 3D‑illustrasjoner
+          </label>
+
           <div class="note muted">3D priser avtales etter omfang (indikativt fra 3.000 kr per prosjekt).</div>
-          <div class="result"><div><div class="muted">Estimert pris</div><div id="total" class="total">0 kr</div></div><button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button></div>
+
+          <div class="result">
+            <div>
+              <div class="muted">Estimert pris</div>
+              <div id="total" class="total">0 kr</div>
+            </div>
+            <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
+          </div>
+
           <button type="button" id="toContact" class="btn btn-primary btn-block">Gå til bestilling</button>
         </form>
       </div>
@@ -95,43 +135,108 @@
   </section>
 
   <section id="referanser" class="testimonials">
-    <div class="container"><h2>Hva sier kundene?</h2>
+    <div class="container">
+      <h2>Hva sier kundene?</h2>
       <div class="grid-3">
-        <blockquote><div class="stars" aria-label="5 av 5 stjerner">★★★★★</div><p>Rask og ryddig prosess. Fikk alt klart til søknad – anbefales.</p><cite>Line</cite></blockquote>
-        <blockquote><div class="stars">★★★★★</div><p>Konkurransedyktig pris og god oppfølging hele veien.</p><cite>Bjørn</cite></blockquote>
-        <blockquote><div class="stars">★★★★★</div><p>Profesjonelle tegninger og god veiledning fra idé til innsending.</p><cite>Vegar</cite></blockquote>
+        <blockquote>
+          <div class="stars" aria-label="5 av 5 stjerner">★★★★★</div>
+          <p>Rask og ryddig prosess. Fikk alt klart til søknad – anbefales.</p>
+          <cite>Line</cite>
+        </blockquote>
+
+        <blockquote>
+          <div class="stars">★★★★★</div>
+          <p>Konkurransedyktig pris og god oppfølging hele veien.</p>
+          <cite>Bjørn</cite>
+        </blockquote>
+
+        <blockquote>
+          <div class="stars">★★★★★</div>
+          <p>Profesjonelle tegninger og god veiledning fra idé til innsending.</p>
+          <cite>Vegar</cite>
+        </blockquote>
       </div>
     </div>
   </section>
 
   <section id="prosjekter" class="projects">
-    <div class="container"><h2>Prosjekter</h2>
+    <div class="container">
+      <h2>Prosjekter</h2>
       <div class="grid-3">
-        <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig | Viken</h3><p>Komplette tegninger og byggesøknad til godkjenning.</p></article>
-        <article class="project-card"><div class="thumb placeholder"></div><h3>Tilbygg | Oslo</h3><p>Planendring, snitt, fasader og situasjonsplan.</p></article>
-        <article class="project-card"><div class="thumb placeholder"></div><h3>Garasje | Innlandet</h3><p>Tegninger basert på kundens skisser.</p></article>
+        <article class="project-card">
+          <div class="thumb placeholder"></div>
+          <h3>Enebolig | Viken</h3>
+          <p>Komplette tegninger og byggesøknad til godkjenning.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="thumb placeholder"></div>
+          <h3>Tilbygg | Oslo</h3>
+          <p>Planendring, snitt, fasader og situasjonsplan.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="thumb placeholder"></div>
+          <h3>Garasje | Innlandet</h3>
+          <p>Tegninger basert på kundens skisser.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="kontakt" class="contact">
-    <div class="container"><h2>Kontakt oss</h2>
+    <div class="container">
+      <h2>Kontakt oss</h2>
+
       <form class="contact-form" name="kontakt" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="kontakt">
-        <label>Navn<input type="text" name="navn" required></label>
-        <label>E‑post<input type="email" name="epost" required></label>
-        <label>Telefon<input type="tel" name="telefon"></label>
-        <label>Bruksareal (m²)<input type="number" name="areal" min="1" placeholder="f.eks. 120"></label>
-        <label>Beskrivelse<textarea name="beskrivelse" rows="5" placeholder="Kort om prosjektet og ønskede tegninger..."></textarea></label>
-        <label class="check"><input type="checkbox" name="want3d"> Jeg ønsker 3D‑illustrasjoner</label>
+
+        <label>Navn
+          <input type="text" name="navn" required>
+        </label>
+
+        <label>E‑post
+          <input type="email" name="epost" required>
+        </label>
+
+        <label>Telefon
+          <input type="tel" name="telefon">
+        </label>
+
+        <label>Bruksareal (m²)
+          <input type="number" name="areal" min="1" placeholder="f.eks. 120">
+        </label>
+
+        <label>Beskrivelse
+          <textarea name="beskrivelse" rows="5" placeholder="Kort om prosjektet og ønskede tegninger..."></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" name="want3d"> Jeg ønsker 3D‑illustrasjoner
+        </label>
+
         <button type="submit" class="btn btn-primary">Send forespørsel</button>
       </form>
-      <div class="contact-info"><p><strong>E‑post:</strong> post_tegna@yahoo.com</p><p><strong>Telefon:</strong> +47 417 62 300</p><p class="muted">Vi svarer normalt innen 24 timer.</p></div>
+
+      <div class="contact-info">
+        <p><strong>E‑post:</strong> post_tegna@yahoo.com</p>
+        <p><strong>Telefon:</strong> +47 417 62 300</p>
+        <p class="muted">Vi svarer normalt innen 24 timer.</p>
+      </div>
     </div>
   </section>
+
 </main>
 
-<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Tegna — Org.nr 000 000 000 | <a href="personvern.html" class="link">Personvern</a></p></div></footer>
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Tegna — Org.nr 000 000 000 | 
+      <a href="personvern.html" class="link">Personvern</a>
+    </p>
+  </div>
+</footer>
+
 <script src="app.js"></script>
+
 </body>
 </html>
