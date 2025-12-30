@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kontakt — Firma</title>
+  <title>Kontakt / Bestilling — Firma</title>
   <meta name="description" content="Kontaktformular — send oss en forespørsel" />
 
   <style>
-    /* Minimalni stilovi za preglednost */
     :root{
       --bg:#f7f9fb;
       --card:#fff;
@@ -22,23 +21,22 @@
     h1,h2{margin:.5rem 0}
     .muted{color:var(--muted)}
     main{padding:2rem 0}
-    .contact{background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.95));padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(15,23,42,.06)}
+    .card{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 4px 12px rgba(15,23,42,.04)}
+    .contact{padding:2rem}
     .contact-form{display:grid;grid-template-columns:1fr;gap:.75rem;align-items:start}
     label{font-weight:600;font-size:.95rem}
-    input[type="text"], input[type="email"], input[type="tel"], textarea{
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
       width:100%;padding:.6rem .75rem;border:1px solid #d0d7e3;border-radius:6px;background:var(--card);font-size:1rem
     }
     .form-row{display:flex;flex-direction:column;gap:.35rem}
     .btn{display:inline-block;background:var(--primary);color:white;padding:.6rem .85rem;border:none;border-radius:6px;cursor:pointer}
     .btn[disabled]{opacity:.6;cursor:wait}
     .help{font-size:.9rem;color:var(--muted)}
-    /* Honeypot hidden field */
     .hidden-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .form-success{padding:1rem;border-radius:6px;background:#ecfdf5;color:#064e3b;margin-top:.75rem;border:1px solid #bbf7d0}
-    footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
-    @media(min-width:700px){
-      .contact{padding:3rem}
-    }
+    .form-error{padding:1rem;border-radius:6px;background:#fff1f2;color:#7f1d1d;margin-top:.75rem;border:1px solid #fecaca}
+    .calc{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;align-items:end}
+    @media(max-width:700px){ .calc{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -49,17 +47,37 @@
   </header>
 
   <main class="container" id="main">
-    <section id="kontakt" class="contact" aria-labelledby="kontakt-heading">
-      <h2 id="kontakt-heading">Kontakt oss</h2>
+    <section class="card contact" aria-labelledby="kontakt-heading">
+      <h2 id="kontakt-heading">Kontakt oss / Bestill</h2>
       <p class="muted">Send oss en forespørsel, så tar vi kontakt innen kort tid.</p>
 
-      <!--
-        Netlify form setup:
-        - data-netlify="true" required for Netlify to detect the form in the built HTML
-        - data-netlify-honeypot="bot-field" + a hidden (visually hidden, not type="hidden") input for honeypot
-        - Keep <input name="form-name" value="kontakt"> hidden so Netlify knows the form name
-        - Optionally add action="/thank-you" to redirect to a thank-you page after submit (uncomment if you create that page)
-      -->
+      <!-- Jednostavan kalkulator cene -->
+      <div class="card" style="margin-bottom:1rem">
+        <h3>Beregn pris</h3>
+        <div class="calc" id="price-calc">
+          <div class="form-row">
+            <label for="produkt">Pakketype</label>
+            <select id="produkt" name="produkt">
+              <option value="basic" data-price="1000">Basic — 1 000 kr</option>
+              <option value="standard" data-price="2000">Standard — 2 000 kr</option>
+              <option value="premium" data-price="3500">Premium — 3 500 kr</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="kolicina">Količina</label>
+            <input id="kolicina" type="number" min="1" step="1" value="1">
+          </div>
+
+          <div class="form-row" style="grid-column:1 / -1">
+            <label for="total">Total pris</label>
+            <input id="total" type="text" readonly aria-readonly="true" value="1000 kr">
+            <small class="help">Prisen vil bli sendt sammen med bestillingen.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Netlify form -->
       <form
         name="kontakt"
         method="POST"
@@ -69,13 +87,14 @@
         id="kontakt-form"
         novalidate
       >
-        <!-- Required by Netlify -->
         <input type="hidden" name="form-name" value="kontakt">
-
-        <!-- Honeypot: hide it visually but make it present in DOM so bots might fill it -->
+        <!-- honeypot -->
         <p class="hidden-field" aria-hidden="true">
           <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </p>
+
+        <!-- skriveno polje za cijenu iz kalkulatora -->
+        <input type="hidden" name="calculated_price" id="calculated_price" value="1000">
 
         <div class="form-row">
           <label for="navn">Navn</label>
@@ -89,16 +108,7 @@
 
         <div class="form-row">
           <label for="telefon">Telefon (valgfritt)</label>
-          <input
-            id="telefon"
-            type="tel"
-            name="telefon"
-            inputmode="tel"
-            pattern="[0-9+()\- \s]*"
-            placeholder="+47 123 45 678"
-            autocomplete="tel"
-          >
-          <small class="help">Formater: sifre, +, parenteser og bindestreker tillatt</small>
+          <input id="telefon" type="tel" name="telefon" inputmode="tel" pattern="[0-9+()\- \s]*" placeholder="+47 123 45 678" autocomplete="tel">
         </div>
 
         <div class="form-row">
@@ -106,15 +116,11 @@
           <textarea id="melding" name="melding" rows="5" required aria-required="true"></textarea>
         </div>
 
-        <!-- If you want Netlify reCAPTCHA, uncomment the following and enable reCAPTCHA in Netlify settings:
-             <div data-netlify-recaptcha="true"></div>
-        -->
-
         <div>
-          <button type="submit" class="btn btn-primary" id="submit-btn">Send forespørsel</button>
+          <!-- Napomena: nakon uspješnog ajax slanja, klijent će biti preusmjeren na /bestilling -->
+          <button type="submit" class="btn btn-primary" id="submit-btn">Send forespørsel / Bestill</button>
         </div>
 
-        <!-- Inline success message placeholder (will be filled by JS if JS is enabled) -->
         <div id="form-result" role="status" aria-live="polite"></div>
       </form>
     </section>
@@ -125,10 +131,41 @@
   </footer>
 
   <script>
-    // Small JS enhancements:
-    // - Prevent multiple submits
-    // - Client-side required validation fallback and friendly messages
-    // - Show an inline success message if the form submission proceeds (Netlify will process)
+    // Helper: encode object for application/x-www-form-urlencoded
+    function encode(data) {
+      return Object.keys(data)
+        .map(function(key) {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+        })
+        .join('&');
+    }
+
+    // Kalkulator logika
+    (function(){
+      var produktSel = document.getElementById('produkt');
+      var kolicinaInput = document.getElementById('kolicina');
+      var totalInput = document.getElementById('total');
+      var calculatedPriceInput = document.getElementById('calculated_price');
+
+      function getSelectedPrice() {
+        var opt = produktSel.selectedOptions[0];
+        return parseFloat(opt.dataset.price || 0);
+      }
+
+      function updateTotal() {
+        var cena = getSelectedPrice();
+        var kolicina = Math.max(1, parseInt(kolicinaInput.value || 1, 10));
+        var total = cena * kolicina;
+        totalInput.value = total.toLocaleString('no-NB') + ' kr';
+        calculatedPriceInput.value = total; // ovo se pošalje u formi
+      }
+
+      produktSel.addEventListener('change', updateTotal);
+      kolicinaInput.addEventListener('input', updateTotal);
+      updateTotal();
+    })();
+
+    // Form submit: Ajax prema Netlify i redirect na /bestilling nakon uspjeha
     (function(){
       document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -145,47 +182,59 @@
       }
 
       form.addEventListener('submit', function(e){
-        // Basic HTML5 validity check
+        e.preventDefault(); // mi preuzimamo kontrolu i odlučujemo kad poslati
+
+        // checkValidity() radi i kada je form novalidate, pa ćemo koristiti taj rezultat
         if (!form.checkValidity()) {
-          // Let native validation show — but we can also show friendly text
-          // Using setTimeout to allow browser to show native messages
-          setTimeout(function(){
-            showMessage('Vennligst fyll inn alle obligatoriske felter korrekt.', false);
-          }, 10);
+          showMessage('Vennligst fyll inn alle obligatoriske felter korrekt.', false);
+          // fokusiraj prvo nevalidno polje za bolji UX
+          var firstInvalid = form.querySelector(':invalid');
+          if (firstInvalid) firstInvalid.focus();
           return;
         }
 
-        // Prevent double submit
-        if (submitBtn.disabled) {
-          e.preventDefault();
-          return;
-        }
-
-        // Disable button briefly to avoid double clicks
+        if (submitBtn.disabled) return;
         submitBtn.disabled = true;
         var originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sender...';
 
-        // Let the form submit normally (so Netlify can redirect to a thank-you page if configured).
-        // We will re-enable the button if submission fails (we can't reliably detect success without AJAX).
-        // If you want to submit via AJAX and show inline success without redirect, let me know and I'll add it.
-        setTimeout(function(){
+        // build form data object (uključuje skrivena polja)
+        var formData = new FormData(form);
+        // Important: Netlify expects "form-name" field present - imamo hidden input form-name
+        // Convert FormData to urlencoded string
+        var obj = {};
+        formData.forEach(function(value, key){
+          // If multiple values with same key, Netlify will accept repeated keys, but for simplicity:
+          if (obj[key] !== undefined) {
+            // convert to comma-separated if duplicate
+            obj[key] = obj[key] + ',' + value;
+          } else {
+            obj[key] = value;
+          }
+        });
+
+        // Send to Netlify
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode(obj)
+        }).then(function(response){
+          if (response.ok) {
+            // success: redirect to bestilling page (možeš promijeniti URL)
+            // Ako želiš da bestilling prikaže podatke koje smo poslali, možeš umjesto redirekta prikazati inline poruku ili koristiti query parametre.
+            window.location.href = '/bestilling';
+          } else {
+            return response.text().then(function(text){
+              throw new Error(text || 'Server returned ' + response.status);
+            });
+          }
+        }).catch(function(err){
+          console.error('Form submit failed:', err);
+          showMessage('Noe gikk galt ved innsending. Prøv igjen senare.', false);
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
-        }, 3000);
-        // Note: do NOT call e.preventDefault() if you want the native POST to happen.
+        });
       });
-
-      // Accessibility: show focus outline for keyboard users only
-      (function(){
-        function handleFirstTab(e) {
-          if (e.key === 'Tab') {
-            document.documentElement.classList.add('user-is-tabbing');
-            window.removeEventListener('keydown', handleFirstTab);
-          }
-        }
-        window.addEventListener('keydown', handleFirstTab);
-      })();
     })();
   </script>
 </body>
