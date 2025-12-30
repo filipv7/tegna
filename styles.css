@@ -7,7 +7,7 @@ img{max-width:100%;height:auto;display:block}
 .container{max-width:1100px;margin:0 auto;padding:0 1rem}
 .site-header{position: static;background:#fff;border-bottom:1px solid var(--border);z-index:50;}
 .header-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand img{display:block}
+.brand img{max-height: 32px;width: auto;}
 .logo-fallback{width:40px;height:40px}
 .nav a{margin-left:1rem;text-decoration:none;color:var(--text)}
 .nav .btn-outline{padding:.5rem .75rem;border:1px solid var(--border);border-radius:8px}
