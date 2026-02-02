@@ -13,12 +13,12 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Tegna – Tegninger til byggesøknad">
-  <meta property="og:description" content="Komplette tegninger til byggesøknad og nabovarsel. Tilbygg, garasje, veranda og mindre bygg.">
+  <meta property="og:description" content="Komplette tegninger til byggesøknad og nabovarsel. Tilbygg, garasje, veranda og mer.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo.png">
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  assets/favicon.svg
+  styles.css
 
   <!-- Strukturert data -->
   <script type="application/ld+json">
@@ -44,19 +44,16 @@
 
 <header class="site-header">
   <div class="container header-wrap">
-    <a href="#" class="brand" aria-label="Tegna – forsiden">
-      <img src="assets/logo.png"
-           alt="Tegna – tegninger til byggesøknad"
-           height="40"
-           onerror="this.style.display='none'">
+    #
+      assets/logo.png
     </a>
 
     <nav class="nav" aria-label="Hovedmeny">
       <a href="#tjenester">Tjenester</a>
       <a href="#pris">Kalkulator</a>
-      <a href="#prosjekter">Prosjekter</a>
-      <a href="#referanser">Referanser</a>
-      <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+     </a>
+      #referanserReferanser</a>
+      <a href="#kontakt" class="btn btn-outline">Forespørsel</a>
     </nav>
   </div>
 </header>
@@ -73,7 +70,22 @@
     <p class="lead">
       Fra idé eller grov skisse til ferdige tegninger som kan brukes direkte
       i byggesøknad og nabovarsel – uansett kommune i Norge.
-    </ass="card">
+    </p>
+
+    <div class="cta">
+      <a href="#pris" class="btn btn-primary">Beregn pris</a>
+      <a href="#tjenester" class="btn btn-secondary">Dette lager jeg</a>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container grid-3">
+    <div class="card">
+      <h2 class="h3">Lav terskel</h2>
+      <p>Kom med en idé eller enkel skisse – resten finner vi ut av sammen.</p>
+    </div>
+    <div class="card">
       <h2 class="h3">Ryddig prosess</h2>
       <p>Tegninger leveres klare til bruk i byggesøknad og nabovarsel.</p>
     </div>
@@ -97,17 +109,13 @@
         <li>3D‑illustrasjoner (valgfritt tillegg)</li>
       </ul>
       <p class="muted">
-        Leveringstid er normalt rundt to uker, avhengig av prosjekt og avklaringer.
+        Normal leveringstid er rundt to uker, avhengig av prosjekt og avklaringer.
       </p>
-      <div class="stack">
-        <a href="#kontakt" class="btn btn-primary">Ta kontakt</a>
-        <a href="#prosjekter" class="link">Se prosjekter</a>
-      </div>
+     
     </div>
 
     <figure class="service-figure">
-      <img src="assets/prosjekt_ferdig.jpg"
-           alt="Eksempel på ferdige byggetegninger">
+      assets/prosjekt_ferdig.jpg
     </figure>
   </div>
 </section>
@@ -116,17 +124,18 @@
   <div class="container">
     <h2>Priskalkulator</h2>
 
-    <!-- Kalkulator beholdes uendret -->
     <div class="grid-2">
       <div class="calc">
         <label>
           Bruksareal (m²)
           <input type="number" id="area" min="1" placeholder="f.eks. 120">
         </label>
+
         <label class="check">
           <input type="checkbox" id="want3d">
           Legg til 3D‑illustrasjoner
         </label>
+
         <div class="result">
           <div>
             <div class="muted">Estimert pris</div>
@@ -134,8 +143,11 @@
           </div>
           <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
         </div>
-        <button type="button" id="toContact" class="btn btn-primary btn-block">
-          Gå til bestilling
+
+        <button type="button"
+                id="toContact"
+                class="btn btn-primary btn-block">
+          Gå til forespørsel
         </button>
       </div>
     </div>
@@ -146,18 +158,9 @@
   <div class="container">
     <h2>Utvalgte prosjekter</h2>
     <div class="grid-3">
-      <article class="project-card">
-        <div class="thumb placeholder"></div>
-        <h3>Enebolig – Viken</h3>
-      </article>
-      <article class="project-card">
-        <div class="thumb placeholder"></div>
-        <h3>Tilbygg – Oslo</h3>
-      </article>
-      <article class="project-card">
-        <div class="thumb placeholder"></div>
-        <h3>Garasje – Innlandet</h3>
-      </article>
+      <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig – Viken</h3></article>
+      <article class="project-card"><div class="thumb placeholder"></div><h3>Tilbygg – Oslo</h3></article>
+      <article class="project-card"><div class="thumb placeholder"></div><h3>Garasje – Innlandet</h3></article>
     </div>
   </div>
 </section>
@@ -175,23 +178,40 @@
 
 <section id="kontakt" class="contact">
   <div class="container">
-    <h2>Kontakt</h2>
+    <h2>Send forespørsel</h2>
 
-    <p>
-      Klikk under for å opprette en e‑post i ditt e‑postprogram
-      med ferdig utfylt informasjon.
+    <p class="muted">
+      Når du sender forespørselen åpnes e‑postprogrammet på mobilen
+      eller datamaskinen din med ferdig utfylt informasjon.
     </p>
 
-    <button type="button"
-            class="btn btn-primary"
-            onclick="sendForesporsel()">
-      Opprett e‑post
-    </button>
+    <div class="contact-form">
+      <label>Navn
+        <input type="text" id="kontakt-navn" required>
+      </label>
 
-    <div class="contact-info">
-      <p><strong>E‑post:</strong> post_tegna@yahoo.com</p>
-      <p><strong>Telefon:</strong> +47 417 62 300</p>
-      <p class="muted">Svar normalt innen 24 timer.</p>
+      <label>E‑post
+        <input type="email" id="kontakt-epost">
+      </label>
+
+      <label>Bruksareal (m²)
+        <input type="number" id="kontakt-areal">
+      </label>
+
+      <label>Beskrivelse
+        <textarea id="kontakt-beskrivelse" rows="5"></textarea>
+      </label>
+
+      <button type="button"
+              class="btn btn-primary"
+              onclick="sendForesporsel()">
+        Send forespørsel
+      </button>
+
+      <p id="mailtoFallback" class="muted" hidden>
+        Hvis e‑post ikke åpnes automatisk:
+        <a href="mailto:post_tegna@yahoo.com">send e‑post manuelt</a>.
+      </p>
     </div>
   </div>
 </section>
