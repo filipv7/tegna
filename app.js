@@ -1,5 +1,7 @@
+// År i footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Priskalkulator
 const PRICE_PER_M2 = 100;
 const areaEl = document.getElementById('area');
 const want3dEl = document.getElementById('want3d');
@@ -21,7 +23,8 @@ function calc() {
     totalEl.textContent = "0 kr";
     return;
   }
-  totalEl.textContent = formatNOK(area * PRICE_PER_M2) +
+  totalEl.textContent =
+    formatNOK(area * PRICE_PER_M2) +
     (want3dEl.checked ? " + 3D‑tillegg" : "");
 }
 
@@ -29,13 +32,17 @@ calcBtn.addEventListener('click', calc);
 areaEl.addEventListener('input', calc);
 want3dEl.addEventListener('change', calc);
 
+// Scroll + overfør areal
 toContactBtn.addEventListener('click', () => {
-  document.getElementById('kontakt-areal').value = areaEl.value;
+  if (areaEl.value) {
+    document.getElementById('kontakt-areal').value = areaEl.value;
+  }
   document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
 });
 
+// Mailto‑forespørsel
 function sendForesporsel() {
-  const navn = document.getElementById('kontakt-navn').value;
+  const navn = document.getElementById('kontakt-navn').value.trim();
   if (!navn) {
     alert("Vennligst skriv inn navnet ditt.");
     return;
@@ -45,7 +52,8 @@ function sendForesporsel() {
   const areal = document.getElementById('kontakt-areal').value;
   const besk = document.getElementById('kontakt-beskrivelse').value;
 
-  const body = `Hei Tegna,
+  const body =
+`Hei Tegna,
 
 Navn: ${navn}
 E-post: ${epost}
@@ -55,5 +63,6 @@ Beskrivelse:
 ${besk}`;
 
   window.location.href =
-    `mailto:post_tegna@yahoo.com?subject=${encodeURIComponent("Forespørsel tegninger")}&body=${encodeURIComponent(body)}`;
+    `mailto:post_tegna@yahoo.com?subject=${encodeURIComponent("Forespørsel – byggetegninger")}&body=${encodeURIComponent(body)}`;
 }
+``
