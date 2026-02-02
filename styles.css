@@ -1,149 +1,31 @@
-/* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; line-height: 1.6; color: #111; }
+img { max-width: 100%; }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  color: #111;
-}
-
-img { max-width: 100%; display: block; }
-
-/* LAYOUT */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
+.container { max-width: 1100px; margin: auto; padding: 1rem; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 
-/* HEADER */
-.site-header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-}
-
-.header-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
+.site-header { border-bottom: 1px solid #eee; }
+.header-wrap { display: flex; justify-content: space-between; align-items: center; }
 
 .brand img { height: 40px; }
 
-.nav a {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: #111;
-}
+.nav a { margin-left: 1rem; text-decoration: none; color: #111; }
 
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.4rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-}
+.hero { padding: 4rem 0; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+.hero span { font-weight: 400; }
 
-.btn-primary {
-  background: #111;
-  color: #fff;
-}
+.btn-primary { background:#111; color:#fff; padding:.7rem 1.3rem; border:none; }
+.btn-secondary { border:1px solid #111; padding:.7rem 1.3rem; background:none; }
+.btn-outline { border:1px solid #111; padding:.4rem .8rem; }
 
-.btn-secondary {
-  border: 1px solid #111;
-  color: #111;
-}
+.pricing input, textarea { width:100%; padding:.6rem; margin:.4rem 0; }
 
-.btn-outline {
-  border: 1px solid #111;
-}
+footer { border-top:1px solid #eee; padding:2rem; text-align:center; }
 
-.btn-block { width: 100%; }
-
-/* HERO */
-.hero {
-  padding: 4rem 0;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
-
-.hero h1 span {
-  font-weight: 400;
-}
-
-.lead {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-
-/* SECTIONS */
-section { margin-bottom: 4rem; }
-
-.card {
-  padding: 1.5rem;
-  border: 1px solid #eee;
-  border-radius: 10px;
-}
-
-/* SERVICES */
-.service-figure img {
-  border-radius: 12px;
-}
-
-/* PRICING */
-.calc {
-  max-width: 420px;
-}
-
-.calc label {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.calc input,
-.calc textarea {
-  width: 100%;
-  padding: 0.6rem;
-}
-
-/* TESTIMONIALS */
-blockquote {
-  padding: 1.2rem;
-  border-left: 4px solid #111;
-  background: #fafafa;
-}
-
-/* CONTACT */
-.contact-form {
-  max-width: 480px;
-}
-
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid #eee;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .nav { display: none; }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
+@media (max-width:768px){
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .nav{display:none;}
 }
