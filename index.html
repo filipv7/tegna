@@ -4,57 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tegna – Tegninger til byggesøknad og nabovarsel i hele Norge</title>
-
-  <meta name="description"
-        content="Tegna leverer komplette tegninger til byggesøknad og nabovarsel – plantegninger, fasader, snitt og situasjonsplan. Gjelder hele Norge.">
-
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tegna – Tegninger til byggesøknad">
-  <meta property="og:description" content="Komplette tegninger til byggesøknad og nabovarsel. Tilbygg, garasje, veranda og mer.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/logo.png">
+  <title>Tegna – Tegninger til byggesøknad og nabovarsel</title>
+  <meta name="description" content="Tegninger til byggesøknad og nabovarsel. Plantegninger, fasader, snitt og situasjonsplan. Gjelder hele Norge.">
 
   assets/favicon.svg
   styles.css
-
-  <!-- Strukturert data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Tegna",
-    "url": "https://www.tegna.no",
-    "areaServed": "NO",
-    "description": "Tegninger til byggesøknad og nabovarsel for tilbygg, garasje, veranda og mindre bygg.",
-    "serviceType": [
-      "Plantegninger",
-      "Fasadetegninger",
-      "Snitt",
-      "Situasjonsplan",
-      "Nabovarsel"
-    ]
-  }
-  </script>
 </head>
 
 <body>
 
 <header class="site-header">
   <div class="container header-wrap">
-    #
-      assets/logo.png
+    <a href="#" class="brand">
+      <img src="assets/logo.png" alt="Tegna – tegninger til byggesøknad">
     </a>
 
-    <nav class="nav" aria-label="Hovedmeny">
+    <nav class="nav">
       <a href="#tjenester">Tjenester</a>
-      <a href="#pris">Kalkulator</a>
-     </a>
-      #referanserReferanser</a>
-      <a href="#kontakt" class="btn btn-outline">Forespørsel</a>
-    </nav>
+     /nav>
   </div>
 </header>
 
@@ -63,8 +30,8 @@
 <section class="hero">
   <div class="container">
     <h1>
-      Tegninger til byggesøknad<br class="br-md">
-      – enkelt, ryddig og klart til innsending
+      Tegninger til byggesøknad<br>
+      <span>– enkelt, ryddig og klart til innsending</span>
     </h1>
 
     <p class="lead">
@@ -73,8 +40,8 @@
     </p>
 
     <div class="cta">
-      <a href="#pris" class="btn btn-primary">Beregn pris</a>
-      <a href="#tjenester" class="btn btn-secondary">Dette lager jeg</a>
+      #prisBeregn pris</a>
+      #tjenesterDette lager jeg</a>
     </div>
   </div>
 </section>
@@ -82,16 +49,16 @@
 <section class="features">
   <div class="container grid-3">
     <div class="card">
-      <h2 class="h3">Lav terskel</h2>
+      <h3>Lav terskel</h3>
       <p>Kom med en idé eller enkel skisse – resten finner vi ut av sammen.</p>
     </div>
     <div class="card">
-      <h2 class="h3">Ryddig prosess</h2>
+      <h3>Ryddig prosess</h3>
       <p>Tegninger leveres klare til bruk i byggesøknad og nabovarsel.</p>
     </div>
     <div class="card">
-      <h2 class="h3">Forutsigbart</h2>
-      <p>Tydelig omfang, strukturert levering og god dialog underveis.</p>
+      <h3>Forutsigbart</h3>
+      <p>Tydelig omfang, strukturert levering og god dialog.</p>
     </div>
   </div>
 </section>
@@ -105,17 +72,14 @@
         <li>Fasadetegninger</li>
         <li>Snitt</li>
         <li>Situasjonsplan</li>
-        <li>Orienterings- og rømningsplaner (ved behov)</li>
-        <li>3D‑illustrasjoner (valgfritt tillegg)</li>
+        <li>Orienterings- / rømningsplaner</li>
+        <li>3D‑illustrasjoner (valgfritt)</li>
       </ul>
-      <p class="muted">
-        Normal leveringstid er rundt to uker, avhengig av prosjekt og avklaringer.
-      </p>
-     
+      <p class="muted">Normal leveringstid: ca. 2 uker.</p>
     </div>
 
     <figure class="service-figure">
-      assets/prosjekt_ferdig.jpg
+      <img src="assets/prosjekt_ferdig.jpg" alt="Eksempel på ferdig prosjekt">
     </figure>
   </div>
 </section>
@@ -124,43 +88,28 @@
   <div class="container">
     <h2>Priskalkulator</h2>
 
-    <div class="grid-2">
-      <div class="calc">
-        <label>
-          Bruksareal (m²)
-          <input type="number" id="area" min="1" placeholder="f.eks. 120">
-        </label>
+    <div class="calc">
+      <label>
+        Bruksareal (m²)
+        <input type="number" id="area" min="1" placeholder="f.eks. 120">
+      </label>
 
-        <label class="check">
-          <input type="checkbox" id="want3d">
-          Legg til 3D‑illustrasjoner
-        </label>
+      <label class="check">
+        <input type="checkbox" id="want3d">
+        Legg til 3D‑illustrasjoner
+      </label>
 
-        <div class="result">
-          <div>
-            <div class="muted">Estimert pris</div>
-            <div id="total" class="total">0 kr</div>
-          </div>
-          <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
+      <div class="result">
+        <div>
+          <div class="muted">Estimert pris</div>
+          <div id="total" class="total">0 kr</div>
         </div>
-
-        <button type="button"
-                id="toContact"
-                class="btn btn-primary btn-block">
-          Gå til forespørsel
-        </button>
+        <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="prosjekter" class="projects">
-  <div class="container">
-    <h2>Utvalgte prosjekter</h2>
-    <div class="grid-3">
-      <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig – Viken</h3></article>
-      <article class="project-card"><div class="thumb placeholder"></div><h3>Tilbygg – Oslo</h3></article>
-      <article class="project-card"><div class="thumb placeholder"></div><h3>Garasje – Innlandet</h3></article>
+      <button type="button" id="toContact" class="btn btn-primary btn-block">
+        Gå til forespørsel
+      </button>
     </div>
   </div>
 </section>
@@ -180,11 +129,6 @@
   <div class="container">
     <h2>Send forespørsel</h2>
 
-    <p class="muted">
-      Når du sender forespørselen åpnes e‑postprogrammet på mobilen
-      eller datamaskinen din med ferdig utfylt informasjon.
-    </p>
-
     <div class="contact-form">
       <label>Navn
         <input type="text" id="kontakt-navn" required>
@@ -202,16 +146,9 @@
         <textarea id="kontakt-beskrivelse" rows="5"></textarea>
       </label>
 
-      <button type="button"
-              class="btn btn-primary"
-              onclick="sendForesporsel()">
+      <button type="button" class="btn btn-primary" onclick="sendForesporsel()">
         Send forespørsel
       </button>
-
-      <p id="mailtoFallback" class="muted" hidden>
-        Hvis e‑post ikke åpnes automatisk:
-        <a href="mailto:post_tegna@yahoo.com">send e‑post manuelt</a>.
-      </p>
     </div>
   </div>
 </section>
@@ -220,13 +157,10 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>
-      © <span id="year"></span> Tegna ·
-      <a href="personvern.html" class="link">Personvern</a>
-    </p>
+    <p>© <span id="year"></span> Tegna · <a href="personvern.html">Personvern</a></p>
   </div>
 </footer>
 
-<script src="app.js" defer></script>
+<script src="app.js"></script>
 </body>
 </html>
