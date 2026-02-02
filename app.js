@@ -1,7 +1,7 @@
 // År i footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Priskalkulator
+// Kalkulator
 const PRICE_PER_M2 = 100;
 const areaEl = document.getElementById('area');
 const want3dEl = document.getElementById('want3d');
@@ -19,7 +19,7 @@ function formatNOK(n) {
 
 function calc() {
   const area = Number(areaEl.value || 0);
-  if (!area) {
+  if (area <= 0) {
     totalEl.textContent = "0 kr";
     return;
   }
@@ -40,7 +40,7 @@ toContactBtn.addEventListener('click', () => {
   document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Mailto‑forespørsel
+// Mailto
 function sendForesporsel() {
   const navn = document.getElementById('kontakt-navn').value.trim();
   if (!navn) {
@@ -63,6 +63,5 @@ Beskrivelse:
 ${besk}`;
 
   window.location.href =
-    `mailto:post_tegna@yahoo.com?subject=${encodeURIComponent("Forespørsel – byggetegninger")}&body=${encodeURIComponent(body)}`;
+    `mailto:post_tegna@yahoo.com?subject=${encodeURIComponent("Forespørsel tegninger")}&body=${encodeURIComponent(body)}`;
 }
-``
