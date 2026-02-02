@@ -1,148 +1,212 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tegna – Tegninger til byggesøknad | Tilbygg, garasje og veranda</title>
+  <title>Tegna – Tegninger til byggesøknad og nabovarsel i hele Norge</title>
 
   <meta name="description"
-        content="Tegna lager komplette tegninger til byggesøknad og nabovarsel – tilbygg, garasje, veranda og mindre bygg. Gjelder hele Norge.">
+        content="Tegna leverer komplette tegninger til byggesøknad og nabovarsel – plantegninger, fasader, snitt og situasjonsplan. Gjelder hele Norge.">
 
-  <link rel="canonical" href="https://www.tegna.no/">
+  <meta name="robots" content="index,follow">
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tegna – Tegninger til byggesøknad">
+  <meta property="og:description" content="Komplette tegninger til byggesøknad og nabovarsel. Tilbygg, garasje, veranda og mindre bygg.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- Strukturert data for SEO -->
+  <!-- Strukturert data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Tegna",
     "url": "https://www.tegna.no",
-    "description": "Tegninger til byggesøknad og nabovarsel for tilbygg, garasje, veranda og mindre bygg i hele Norge.",
     "areaServed": "NO",
+    "description": "Tegninger til byggesøknad og nabovarsel for tilbygg, garasje, veranda og mindre bygg.",
     "serviceType": [
-      "Tegninger til byggesøknad",
-      "Tegninger til nabovarsel",
-      "Tilbygg",
-      "Garasje",
-      "Veranda",
-      "Situasjonsplan"
+      "Plantegninger",
+      "Fasadetegninger",
+      "Snitt",
+      "Situasjonsplan",
+      "Nabovarsel"
     ]
   }
   </script>
 </head>
 
 <body>
-  <header class="site-header">
-    <img src="assets/tegna-logo.png"
-         alt="Tegna – tegninger til byggesøknad"
-         class="logo">
 
-    <h1>Tegninger til byggesøknad – komplett tegningsgrunnlag i hele Norge</h1>
+<header class="site-header">
+  <div class="container header-wrap">
+    <a href="#" class="brand" aria-label="Tegna – forsiden">
+      <img src="assets/logo.png"
+           alt="Tegna – tegninger til byggesøknad"
+           height="40"
+           onerror="this.style.display='none'">
+    </a>
 
-    <p>
-      Trenger du profesjonelle tegninger til byggesøknad eller nabovarsel?
-      Jeg lager komplette og forståelige byggetegninger som kan brukes direkte
-      i søknad til kommunen – uansett hvor i Norge prosjektet ditt er.
-    </p>
-  </header>
+    <nav class="nav" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#pris">Kalkulator</a>
+      <a href="#prosjekter">Prosjekter</a>
+      <a href="#referanser">Referanser</a>
+      <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section>
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>
+      Tegninger til byggesøknad<br class="br-md">
+      – enkelt, ryddig og klart til innsending
+    </h1>
+
+    <p class="lead">
+      Fra idé eller grov skisse til ferdige tegninger som kan brukes direkte
+      i byggesøknad og nabovarsel – uansett kommune i Norge.
+    </ass="card">
+      <h2 class="h3">Ryddig prosess</h2>
+      <p>Tegninger leveres klare til bruk i byggesøknad og nabovarsel.</p>
+    </div>
+    <div class="card">
+      <h2 class="h3">Forutsigbart</h2>
+      <p>Tydelig omfang, strukturert levering og god dialog underveis.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjenester" class="services">
+  <div class="container grid-2">
+    <div>
       <h2>Dette lager jeg for deg</h2>
-
-      <p>
-        Tegningene leveres ferdige til bruk i byggesøknaden og tilpasset
-        kommunale krav. Mange starter med en enkel idé eller grov skisse –
-        resten finner vi ut av sammen.
-      </p>
-
-      <ul>
+      <ul class="service-list">
         <li>Plantegninger</li>
         <li>Fasadetegninger</li>
         <li>Snitt</li>
         <li>Situasjonsplan</li>
-        <li>Orienteringsplan</li>
-        <li>Rømningsplaner (der det er krav)</li>
+        <li>Orienterings- og rømningsplaner (ved behov)</li>
+        <li>3D‑illustrasjoner (valgfritt tillegg)</li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Tegninger til byggesøknad og nabovarsel</h2>
-
-      <p>
-        Tegningene kan brukes direkte som vedlegg i byggesøknad og
-        nabovarsel. Jeg sørger for at dokumentasjonen er tydelig,
-        oversiktlig og i tråd med gjeldende krav.
+      <p class="muted">
+        Leveringstid er normalt rundt to uker, avhengig av prosjekt og avklaringer.
       </p>
-    </section>
+      <div class="stack">
+        <a href="#kontakt" class="btn btn-primary">Ta kontakt</a>
+        <a href="#prosjekter" class="link">Se prosjekter</a>
+      </div>
+    </div>
 
-    <section>
-      <h2>Typiske prosjekter</h2>
+    <figure class="service-figure">
+      <img src="assets/prosjekt_ferdig.jpg"
+           alt="Eksempel på ferdige byggetegninger">
+    </figure>
+  </div>
+</section>
 
-      <ul>
-        <li>Tilbygg på bolig</li>
-        <li>Garasje og carport</li>
-        <li>Veranda, terrasse og platting</li>
-        <li>Mindre bygg og endringer på eksisterende bolig</li>
-      </ul>
-    </section>
+<section id="pris" class="pricing">
+  <div class="container">
+    <h2>Priskalkulator</h2>
 
-    <section>
-      <h2>Leveringstid</h2>
-
-      <p>
-        Vanlig leveringstid er rundt to uker.
-        Tidsbruk avhenger av prosjektets omfang og hvor raskt
-        nødvendige detaljer avklares underveis.
-      </p>
-    </section>
-
-    <section>
-      <h2>3D‑illustrasjoner</h2>
-
-      <p>
-        Ønsker du å se hvordan prosjektet vil se ut før bygging,
-        kan jeg også lage enkle og realistiske 3D‑illustrasjoner.
-        Dette kan være nyttig både for egen forståelse og i dialog med naboer.
-      </p>
-    </section>
-
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-
-      <p>
-        Bruk priskalkulatoren for å få en oversikt,
-        eller send en forespørsel dersom du har spørsmål om prosjektet ditt.
-      </p>
-
-      <form name="kontakt"
-            method="POST"
-            data-netlify="true">
-        <input type="hidden" name="form-name" value="kontakt">
-
+    <!-- Kalkulator beholdes uendret -->
+    <div class="grid-2">
+      <div class="calc">
         <label>
-          Navn
-          <input type="text" name="navn" required>
+          Bruksareal (m²)
+          <input type="number" id="area" min="1" placeholder="f.eks. 120">
         </label>
-
-        <label>
-          E-post
-          <input type="email" name="epost" required>
+        <label class="check">
+          <input type="checkbox" id="want3d">
+          Legg til 3D‑illustrasjoner
         </label>
+        <div class="result">
+          <div>
+            <div class="muted">Estimert pris</div>
+            <div id="total" class="total">0 kr</div>
+          </div>
+          <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
+        </div>
+        <button type="button" id="toContact" class="btn btn-primary btn-block">
+          Gå til bestilling
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <label>
-          Beskrivelse av prosjekt
-          <textarea name="melding" rows="5" required></textarea>
-        </label>
+<section id="prosjekter" class="projects">
+  <div class="container">
+    <h2>Utvalgte prosjekter</h2>
+    <div class="grid-3">
+      <article class="project-card">
+        <div class="thumb placeholder"></div>
+        <h3>Enebolig – Viken</h3>
+      </article>
+      <article class="project-card">
+        <div class="thumb placeholder"></div>
+        <h3>Tilbygg – Oslo</h3>
+      </article>
+      <article class="project-card">
+        <div class="thumb placeholder"></div>
+        <h3>Garasje – Innlandet</h3>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <button type="submit">Send forespørsel</button>
-      </form>
-    </section>
-  </main>
+<section id="referanser" class="testimonials">
+  <div class="container">
+    <h2>Hva sier kundene?</h2>
+    <div class="grid-3">
+      <blockquote><p>Rask og ryddig prosess. Alt klart til søknad.</p><cite>Line</cite></blockquote>
+      <blockquote><p>Profesjonelle tegninger og god veiledning.</p><cite>Bjørn</cite></blockquote>
+      <blockquote><p>Enkelt, oversiktlig og effektivt.</p><cite>Carlos</cite></blockquote>
+    </div>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <p
+<section id="kontakt" class="contact">
+  <div class="container">
+    <h2>Kontakt</h2>
+
+    <p>
+      Klikk under for å opprette en e‑post i ditt e‑postprogram
+      med ferdig utfylt informasjon.
+    </p>
+
+    <button type="button"
+            class="btn btn-primary"
+            onclick="sendForesporsel()">
+      Opprett e‑post
+    </button>
+
+    <div class="contact-info">
+      <p><strong>E‑post:</strong> post_tegna@yahoo.com</p>
+      <p><strong>Telefon:</strong> +47 417 62 300</p>
+      <p class="muted">Svar normalt innen 24 timer.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Tegna ·
+      <a href="personvern.html" class="link">Personvern</a>
+    </p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
