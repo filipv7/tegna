@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Sett årstall i footer (sikkert)
+  // 1) År i footer (unngår feil hvis element mangler)
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 2. Priskalkulator-logikk
+  // 2) Kalkulator
   const PRICE_PER_M2 = 100;
   const areaEl = document.getElementById("area");
   const want3dEl = document.getElementById("want3d");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Intl.NumberFormat("nb-NO", {
       style: "currency",
       currency: "NOK",
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format(n);
   }
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (areaEl) areaEl.addEventListener("input", calc);
   if (want3dEl) want3dEl.addEventListener("change", calc);
 
-  // Flytt arealet ned til kontaktskjemaet når man trykker "Gå til bestilling"
+  // "Gå til bestilling"
   if (toContactBtn) {
     toContactBtn.addEventListener("click", () => {
       const arealVal = areaEl?.value;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. E-post-funksjon (mailto)
+  // 3) E-postfunksjon (mailto)
   function sendForesporsel() {
     const navn = document.getElementById("kontakt-navn")?.value?.trim() || "";
     const epost = document.getElementById("kontakt-epost")?.value?.trim() || "";
@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
       `Ønsker 3D: ${vilHa3D}\n\n` +
       `Beskrivelse:\n${besk || "-"}`;
 
-    // VIKTIG: her skal det være &body= (IKKE &amp;body=)
+    // Viktig: &body= (ikke &amp;body=)
     window.location.href =
       `mailto:${mottaker}` +
       `?subject=${encodeURIComponent(emne)}` +
       `&body=${encodeURIComponent(kropp)}`;
   }
 
-  // 4. Modal functions for image gallery
+  // 4) Modal
   function openModal(src) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
@@ -94,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modalImg) modalImg.src = "";
   }
 
-  // Close modal when pressing Escape key
+  // Escape lukker modal
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeModal();
   });
 
-  // Gjør funksjoner tilgjengelige for inline onclick i HTML
+  // Eksponer funksjoner for inline onclick i HTML
   window.sendForesporsel = sendForesporsel;
   window.openModal = openModal;
   window.closeModal = closeModal;
