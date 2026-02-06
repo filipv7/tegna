@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="container header-wrap">
     <a href="#" class="brand" aria-label="Tegna logo">
-      <img src="assets/logo.png" alt="TEGNA – tegninger til byggesøknad" height="50">
+      <img src="assets/logo.png" alt="TEGNA – tegninger til byggesøknad" height="40">
     </a>
     <nav class="nav" aria-label="Hovedmeny">
       <a href="#tjenester">Tjenester</a>
@@ -112,7 +112,7 @@
       <div class="grid-3">
         <blockquote><div class="stars">★★★★★</div><p>Rask og ryddig prosess. Fikk alt klart til søknad 🥳</p><cite>Line</cite></blockquote>
         <blockquote><div class="stars">★★★★★</div><p>Konkurransedyktig pris og god oppfølging</p><cite>Bjørn</cite></blockquote>
-        <blockquote><div class="stars">★★★★★</div><p>Profesjonelle tegninger og god veiledning</p><cite>Omar</cite></blockquote>
+        <blockquote><div class="stars">★★★★★</div><p>Profesjonelle tegninger og god veiledning 👌</p><cite>Carlos</cite></blockquote>
       </div>
     </div>
   </section>
@@ -121,9 +121,14 @@
     <div class="container">
       <h2>Prosjekter</h2>
       <div class="grid-3">
-        <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig | Østfold</h3></article>
+        <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig | Viken</h3></article>
         <article class="project-card"><div class="thumb placeholder"></div><h3>Tilbygg | Oslo</h3></article>
-        <article class="project-card"><img src="assets/Garasje_Innlandet" alt="Garasje | Innlandet" class="thumb"><h3>Garasje | Innlandet</h3></article>
+        <article class="project-card">
+          <div class="thumb" onclick="openModal('assets/Garasje_Innlandet.jpg')">
+            <img src="assets/Garasje_Innlandet.jpg" alt="Garasje | Innlandet">
+          </div>
+          <h3>Garasje | Innlandet</h3>
+        </article>
       </div>
     </div>
   </section>
@@ -153,6 +158,12 @@
         <p>© <span id="year"></span> Tegna — Org.nr 000 000 000 | <a href="personvern.html" class="link">Personvern</a></p>
     </div>
 </footer>
+
+<!-- Modal for full-size images -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
 <script src="app.js"></script>
 </body>
