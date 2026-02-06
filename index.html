@@ -12,7 +12,9 @@
   <meta property="og:image" content="assets/logo.png" />
   <link rel="icon" href="assets/tegna-logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tegna","url":"https://www.tegna.no","logo":"https://www.tegna.no/assets/logo.png","sameAs":[]}</script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Tegna","url":"https://www.tegna.no","logo":"https://www.tegna.no/assets/logo.png","sameAs":[]}
+  </script>
 </head>
 <body>
 
@@ -65,8 +67,8 @@
         </ul>
         <p class="muted">Leveringstid: Normalt ca. 2 uker, avhengig av avklaringer underveis.</p>
         <div class="stack">
-            <a href="#kontakt" class="btn btn-primary">Start bestilling</a>
-            <a href="#prosjekter" class="link">Se prosjekter</a>
+          <a href="#kontakt" class="btn btn-primary">Start bestilling</a>
+          <a href="#prosjekter" class="link">Se prosjekter</a>
         </div>
       </div>
       <figure class="service-figure">
@@ -77,15 +79,15 @@
 
   <section id="pris" class="pricing">
     <div class="container">
-      <h2>Pris & kalkulator</h2>
+      <h2>Pris &amp; kalkulator</h2>
       <div class="grid-2">
         <div class="price-card">
           <h3>Tegninger til byggesøknad</h3>
           <p class="price"><span class="big">100</span> kr/m²</p>
           <ul class="bullets">
-              <li>Plantegninger, fasader, snitt, situasjonsplan</li>
-              <li>Leveres klare til innsending</li>
-              <li>Kommunale krav ivaretas</li>
+            <li>Plantegninger, fasader, snitt, situasjonsplan</li>
+            <li>Leveres klare til innsending</li>
+            <li>Kommunale krav ivaretas</li>
           </ul>
         </div>
         <div class="calc">
@@ -94,11 +96,11 @@
           <label class="check"><input type="checkbox" id="want3d"> Legg til 3D‑illustrasjoner</label>
           <div class="note muted">3D priser avtales etter omfang (fra 1.000 kr).</div>
           <div class="result">
-              <div>
-                  <div class="muted">Estimert pris</div>
-                  <div id="total" class="total">0 kr</div>
-              </div>
-              <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
+            <div>
+              <div class="muted">Estimert pris</div>
+              <div id="total" class="total">0 kr</div>
+            </div>
+            <button type="button" id="calcBtn" class="btn btn-secondary">Beregn</button>
           </div>
           <button type="button" id="toContact" class="btn btn-primary btn-block">Gå til bestilling</button>
         </div>
@@ -123,12 +125,14 @@
       <div class="grid-3">
         <article class="project-card"><div class="thumb placeholder"></div><h3>Enebolig | Viken</h3></article>
         <article class="project-card"><div class="thumb placeholder"></div><h3>Tilbygg | Oslo</h3></article>
+
         <article class="project-card">
           <div class="thumb" onclick="openModal('assets/Garasje_Innlandet.jpg')">
             <img src="assets/Garasje_Innlandet.jpg" alt="Garasje | Innlandet">
           </div>
           <h3>Garasje | Innlandet</h3>
         </article>
+
       </div>
     </div>
   </section>
@@ -141,7 +145,7 @@
         <label>E‑post<input type="email" id="kontakt-epost" placeholder="Din e-post"></label>
         <label>Bruksareal (m²)<input type="number" id="kontakt-areal" placeholder="f.eks. 120"></label>
         <label>Beskrivelse<textarea id="kontakt-beskrivelse" rows="5" placeholder="Kort om prosjektet og ønskede tegninger..."></textarea></label>
-        
+
         <button type="button" onclick="sendForesporsel()" class="btn btn-primary">Opprett e-post</button>
       </div>
       <div class="contact-info">
@@ -154,15 +158,15 @@
 </main>
 
 <footer class="site-footer">
-    <div class="container">
-        <p>© <span id="year"></span> Tegna — Org.nr 000 000 000 | <a href="personvern.html" class="link">Personvern</a></p>
-    </div>
+  <div class="container">
+    <p>© <span id="year"></span> Tegna — Org.nr 000 000 000 | <a href="personvern.html" class="link">Personvern</a></p>
+  </div>
 </footer>
 
 <!-- Modal for full-size images -->
 <div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
+  <span class="modal-close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage" alt="Forstørret bilde" onclick="event.stopPropagation()">
 </div>
 
 <script src="app.js"></script>
